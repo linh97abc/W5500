@@ -143,9 +143,40 @@ ELF := w5500.elf
 
 # Paths to C, C++, and assembly source files.
 C_SRCS += main.c
-C_SRCS += w5500-lwip/device/wizchip/W5500/w5500.c
-C_SRCS += w5500-lwip/device/wizchip/wizchip_conf.c
-C_SRCS += w5500-lwip/device/wizchip/wizchip_port.c
+C_SRCS += ioLibrary_Driver/Application/loopback/loopback.c
+C_SRCS += ioLibrary_Driver/Application/multicast/multicast.c
+C_SRCS += ioLibrary_Driver/Ethernet/W5500/w5500.c
+C_SRCS += ioLibrary_Driver/Ethernet/socket.c
+C_SRCS += ioLibrary_Driver/Ethernet/wizchip_conf.c
+C_SRCS += ioLibrary_Driver/Ethernet/wizchip_port.c
+C_SRCS += ioLibrary_Driver/Internet/DHCP/dhcp.c
+C_SRCS += ioLibrary_Driver/Internet/DNS/dns.c
+C_SRCS += ioLibrary_Driver/Internet/FTPClient/ftpc.c
+C_SRCS += ioLibrary_Driver/Internet/FTPServer/ftpd.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTClient.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectClient.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTConnectServer.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTDeserializePublish.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTFormat.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTPacket.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSerializePublish.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeClient.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTSubscribeServer.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeClient.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/MQTTPacket/src/MQTTUnsubscribeServer.c
+C_SRCS += ioLibrary_Driver/Internet/MQTT/mqtt_interface.c
+C_SRCS += ioLibrary_Driver/Internet/SNMP/snmp.c
+C_SRCS += ioLibrary_Driver/Internet/SNMP/snmp_custom.c
+C_SRCS += ioLibrary_Driver/Internet/SNTP/sntp.c
+C_SRCS += ioLibrary_Driver/Internet/TFTP/netutil.c
+C_SRCS += ioLibrary_Driver/Internet/TFTP/tftp.c
+C_SRCS += ioLibrary_Driver/Internet/httpServer/httpParser.c
+C_SRCS += ioLibrary_Driver/Internet/httpServer/httpServer.c
+C_SRCS += ioLibrary_Driver/Internet/httpServer/httpUtil.c
+C_SRCS += ioLibrary_Driver/Ethernet/W5100/w5100.c
+C_SRCS += ioLibrary_Driver/Ethernet/W5100S/w5100s.c
+C_SRCS += ioLibrary_Driver/Ethernet/W5200/w5200.c
+C_SRCS += ioLibrary_Driver/Ethernet/W5300/w5300.c
 CXX_SRCS :=
 ASM_SRCS :=
 
@@ -183,7 +214,7 @@ SYS_LIB :=
 BSP_ROOT_DIR := ../hello_bsp/
 
 # List of application specific include directories, library directories and library names
-APP_INCLUDE_DIRS := w5500-lwip/device/wizchip
+APP_INCLUDE_DIRS := ioLibrary_Driver/Ethernet
 APP_LIBRARY_DIRS :=
 APP_LIBRARY_NAMES :=
 

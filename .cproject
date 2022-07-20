@@ -12,9 +12,7 @@
 							<targetPlatform id="altera.nios2.mingw.gcc4.1815186809" name="Nios II" superClass="altera.nios2.mingw.gcc4"/>
 							<builder buildPath="${workspace_loc://w5500}" id="altera.tool.gnu.builder.mingw.1688331504" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" superClass="altera.tool.gnu.builder.mingw"/>
 							<tool id="altera.tool.gnu.c.compiler.mingw.307034366" name="Nios II GCC C Compiler" superClass="altera.tool.gnu.c.compiler.mingw">
-								<option id="gnu.c.compiler.option.include.paths.620919242" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/w5500/w5500-lwip/device/wizchip}&quot;"/>
-								</option>
+								<option id="gnu.c.compiler.option.include.paths.620919242" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1449256645" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="altera.tool.gnu.cpp.compiler.mingw.732158399" name="Nios II GCC C++ Compiler" superClass="altera.tool.gnu.cpp.compiler.mingw">

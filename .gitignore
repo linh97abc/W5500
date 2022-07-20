@@ -4,3 +4,4 @@
 *.objdump
 obj/
 .settings
+.force_relink
