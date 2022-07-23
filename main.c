@@ -4,6 +4,7 @@ void wiz_lowlevel_setup(void);
 
 #include "wizchip_conf.h"
 #include "ioLibrary_Driver/Application/loopback/loopback.h"
+#include "ioLibrary_Driver/port/wizchip_port.h"
 
 
 /* Buffer */
@@ -36,39 +37,7 @@ static uint8_t g_loopback_buf[ETHERNET_BUF_MAX_SIZE] = {
     0,
 };
 
-/* Network */
-void network_initialize(wiz_NetInfo net_info)
-{
-    ctlnetwork(CN_SET_NETINFO, (void *)&net_info);
-}
 
-void print_network_information(wiz_NetInfo net_info)
-{
-    uint8_t tmp_str[8] = {
-        0,
-    };
-
-    ctlnetwork(CN_GET_NETINFO, (void *)&net_info);
-    ctlwizchip(CW_GET_ID, (void *)tmp_str);
-
-    if (net_info.dhcp == NETINFO_DHCP)
-    {
-        printf("====================================================================================================\n");
-        printf(" %s network configuration : DHCP\n\n", (char *)tmp_str);
-    }
-    else
-    {
-        printf("====================================================================================================\n");
-        printf(" %s network configuration : static\n\n", (char *)tmp_str);
-    }
-
-    printf(" MAC         : %02X:%02X:%02X:%02X:%02X:%02X\n", net_info.mac[0], net_info.mac[1], net_info.mac[2], net_info.mac[3], net_info.mac[4], net_info.mac[5]);
-    printf(" IP          : %d.%d.%d.%d\n", net_info.ip[0], net_info.ip[1], net_info.ip[2], net_info.ip[3]);
-    printf(" Subnet Mask : %d.%d.%d.%d\n", net_info.sn[0], net_info.sn[1], net_info.sn[2], net_info.sn[3]);
-    printf(" Gateway     : %d.%d.%d.%d\n", net_info.gw[0], net_info.gw[1], net_info.gw[2], net_info.gw[3]);
-    printf(" DNS         : %d.%d.%d.%d\n", net_info.dns[0], net_info.dns[1], net_info.dns[2], net_info.dns[3]);
-    printf("====================================================================================================\n\n");
-}
 
 
 int main()
@@ -76,7 +45,7 @@ int main()
     /* Initialize */
     int retval = 0;
 
-    wiz_lowlevel_setup();
+    wizchip_port_init();
     network_initialize(g_net_info);
 
     /* Get network information */

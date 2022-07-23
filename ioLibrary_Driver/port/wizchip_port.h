@@ -9,10 +9,11 @@
 #define __WIZCHIP_PORT_H_
 
 // #include "lwip/pbuf.h"
+#include "wizchip_conf.h"
 
-void wiz_lowlevel_setup(void);
-// void wiz_transmit_pbuf(struct pbuf *buf);
-// int wiz_read_receive_pbuf(struct pbuf **buf);
-void wiz_hwReset(void);
+void wizchip_port_init(void);
+void wizchip_interrupt_init(uint8_t socket, void (*callback)(void *));
+void network_initialize(wiz_NetInfo net_info);
+void print_network_information(wiz_NetInfo net_info);
 
 #endif /* __WIZCHIP_PORT_H_ */

@@ -148,7 +148,6 @@ C_SRCS += ioLibrary_Driver/Application/multicast/multicast.c
 C_SRCS += ioLibrary_Driver/Ethernet/W5500/w5500.c
 C_SRCS += ioLibrary_Driver/Ethernet/socket.c
 C_SRCS += ioLibrary_Driver/Ethernet/wizchip_conf.c
-C_SRCS += ioLibrary_Driver/Ethernet/wizchip_port.c
 C_SRCS += ioLibrary_Driver/Internet/DHCP/dhcp.c
 C_SRCS += ioLibrary_Driver/Internet/DNS/dns.c
 C_SRCS += ioLibrary_Driver/Internet/FTPClient/ftpc.c
@@ -177,6 +176,8 @@ C_SRCS += ioLibrary_Driver/Ethernet/W5100/w5100.c
 C_SRCS += ioLibrary_Driver/Ethernet/W5100S/w5100s.c
 C_SRCS += ioLibrary_Driver/Ethernet/W5200/w5200.c
 C_SRCS += ioLibrary_Driver/Ethernet/W5300/w5300.c
+C_SRCS += ioLibrary_Driver/port/w5x00_spi.c
+C_SRCS += ioLibrary_Driver/port/w5x00_gpio_irq.c
 CXX_SRCS :=
 ASM_SRCS :=
 
