@@ -320,6 +320,7 @@ int8_t connect(uint8_t sn, uint8_t * addr, uint16_t port)
 			return SOCKERR_SOCKCLOSED;
 		}
 
+      CHECK_PHYLINK(sn);
       w5x00_delay(W5X00_DELAY_POLL);
    }
    
@@ -345,6 +346,7 @@ int8_t disconnect(uint8_t sn)
 	      return SOCKERR_TIMEOUT;
 	   }
 
+      CHECK_PHYLINK(sn);
       w5x00_delay(W5X00_DELAY_POLL);
 	}
 	return SOCK_OK;
